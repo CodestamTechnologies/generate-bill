@@ -224,7 +224,7 @@ const WeighbridgeSlip: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h1 className="text-2xl font-bold text-center mb-8 text-blue-700">Weighbridge Slip Generator</h1>
+      <h1 className="text-2xl font-bold text-center mb-8 text-neutral-700">Weighbridge Slip Generator</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Column */}
@@ -236,7 +236,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="rstNo"
               value={formData.rstNo}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER RST NUMBER"
             />
           </div>
@@ -248,7 +248,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="partyName"
               value={formData.partyName}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER PARTY NAME"
             />
           </div>
@@ -260,7 +260,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="phoneNo"
               value={formData.phoneNo}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER PHONE NUMBER"
             />
           </div>
@@ -269,7 +269,7 @@ const WeighbridgeSlip: React.FC = () => {
             <div className="flex justify-between">
               <label className="block text-sm font-medium text-gray-700">Gross Weight (Kg)</label>
               <button 
-                className="text-xs bg-blue-600 text-white px-2 py-1 rounded"
+                className="text-xs bg-neutral-600 text-white px-2 py-1 rounded"
                 onClick={() => updateDateTime('gross')}
               >
                 Update Time
@@ -280,7 +280,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="grossWt"
               value={formData.grossWt}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER GROSS WEIGHT"
             />
           </div>
@@ -289,7 +289,7 @@ const WeighbridgeSlip: React.FC = () => {
             <div className="flex justify-between">
               <label className="block text-sm font-medium text-gray-700">Tare Weight (Kg)</label>
               <button 
-                className="text-xs bg-blue-600 text-white px-2 py-1 rounded"
+                className="text-xs bg-neutral-600 text-white px-2 py-1 rounded"
                 onClick={() => updateDateTime('tare')}
               >
                 Update Time
@@ -300,7 +300,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="tareWt"
               value={formData.tareWt}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER TARE WEIGHT"
             />
           </div>
@@ -315,7 +315,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="vehicle"
               value={formData.vehicle}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER VEHICLE NUMBER"
             />
           </div>
@@ -327,7 +327,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="material"
               value={formData.material}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER MATERIAL"
             />
           </div>
@@ -339,7 +339,7 @@ const WeighbridgeSlip: React.FC = () => {
               name="address"
               value={formData.address}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
               placeholder="ENTER ADDRESS"
             />
           </div>
@@ -352,7 +352,7 @@ const WeighbridgeSlip: React.FC = () => {
                 name="dateGross"
                 value={formData.dateGross}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
                 placeholder="DD/MM/YYYY"
               />
               <input
@@ -360,7 +360,7 @@ const WeighbridgeSlip: React.FC = () => {
                 name="timeGross"
                 value={formData.timeGross}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
                 placeholder="HH:MMAM/PM"
               />
             </div>
@@ -374,7 +374,7 @@ const WeighbridgeSlip: React.FC = () => {
                 name="dateTare"
                 value={formData.dateTare}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
                 placeholder="DD/MM/YYYY"
               />
               <input
@@ -382,7 +382,7 @@ const WeighbridgeSlip: React.FC = () => {
                 name="timeTare"
                 value={formData.timeTare}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-500"
                 placeholder="HH:MMAM/PM"
               />
             </div>
@@ -410,7 +410,7 @@ const WeighbridgeSlip: React.FC = () => {
             document={<SlipPDF {...formData} />}
             fileName="weighbridge_slip.pdf"
             className={`px-6 py-3 text-white font-medium rounded-md transition-colors shadow-md ${
-              isFormValid() ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'
+              isFormValid() ? 'bg-neutral-600 hover:bg-neutral-700' : 'bg-gray-400 cursor-not-allowed'
             }`}
           >
             {({ loading }) =>
