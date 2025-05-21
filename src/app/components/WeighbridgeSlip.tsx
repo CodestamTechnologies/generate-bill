@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import SlipPDF, { SlipData } from './SlipPDF';
 import { numberToWords } from '../utils/numberToWords';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../libs/firebase';
 
 const WeighbridgeSlip: React.FC = () => {
   const getCurrentDateTime = (): { date: string; time: string } => {
@@ -113,6 +115,19 @@ const WeighbridgeSlip: React.FC = () => {
     });
   };
 
+  const saveToFirestore = async () => {
+    try {
+      await addDoc(collection(db, 'weighbridgeSlips'), {
+        ...formData,
+        createdAt: new Date().toISOString(),
+      });
+      return true;
+    } catch (error) {
+      console.error('Error saving to Firestore:', error);
+      return false;
+    }
+  };
+
   const updateDateTime = (type: 'gross' | 'tare') => {
     const { date, time } = getCurrentDateTime();
     setFormData((prev) => {
@@ -217,6 +232,17 @@ const WeighbridgeSlip: React.FC = () => {
     setTimeout(() => setNotification({ message: '', type: null }), 3000);
   };
 
+  const handleDownloadPDF = async () => {
+    if (isFormValid()) {
+      const success = await saveToFirestore();
+      setNotification({
+        message: success ? 'Slip saved to Firestore!' : 'Failed to save to Firestore.',
+        type: success ? 'success' : 'error',
+      });
+      setTimeout(() => setNotification({ message: '', type: null }), 3000);
+    }
+  };
+  
   return (
     <div className="mx-auto p-8 dark:bg-neutral-900 shadow-lg border border-neutral-100 dark:border-neutral-800">
       {/* Header */}
@@ -525,6 +551,7 @@ const WeighbridgeSlip: React.FC = () => {
             document={<SlipPDF {...formData} />}
             fileName="weighbridge_slip.pdf"
             className="px-6 py-3 bg-neutral-900 hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-700 text-white font-medium rounded-lg transition-colors shadow-md flex items-center gap-2"
+            onClick={handleDownloadPDF}
           >
             {({ loading: pdfLoading }) => (
               <>
