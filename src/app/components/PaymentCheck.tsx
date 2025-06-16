@@ -61,18 +61,13 @@ const PaymentCheck: React.FC = () => {
     }
 
     if (isVerified) {
-        return (
-            <div className="space-y-8">
-                <PaymentPage amount={500} onPaymentComplete={() => { }} />
-                <WeighbridgeSlip />
-            </div>
-        );
+        return <WeighbridgeSlip />;
     }
 
     if (isPending) {
         return (
             <div className="space-y-8">
-                <PaymentPage amount={500} onPaymentComplete={() => { }} />
+                <PaymentPage amount={333} onPaymentComplete={() => { }} />
                 <div className="max-w-md mx-auto p-6 bg-white dark:bg-neutral-800 rounded-lg shadow-lg">
                     <h2 className="text-2xl font-bold text-center mb-6 text-neutral-800 dark:text-white">
                         Payment Status
