@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../../libs/firebase';
 import { updatePaymentStatus, Payment } from '../../libs/payment';
 
@@ -68,9 +68,6 @@ const AdminPaymentsPage = () => {
                         >
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <p className="font-medium text-neutral-800 dark:text-white">
-                                        User ID: {payment.userId}
-                                    </p>
                                     <p className="text-sm text-neutral-600 dark:text-neutral-400">
                                         Amount: ₹{payment.amount}
                                     </p>
@@ -80,13 +77,13 @@ const AdminPaymentsPage = () => {
                                 </div>
                                 <div className="space-x-2">
                                     <button
-                                        onClick={() => handleVerifyPayment(payment.id, 'verified')}
+                                        onClick={() => payment.id && handleVerifyPayment(payment.id, 'verified')}
                                         className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors"
                                     >
                                         Verify
                                     </button>
                                     <button
-                                        onClick={() => handleVerifyPayment(payment.id, 'rejected')}
+                                        onClick={() => payment.id && handleVerifyPayment(payment.id, 'rejected')}
                                         className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors"
                                     >
                                         Reject

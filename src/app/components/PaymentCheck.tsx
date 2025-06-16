@@ -90,7 +90,7 @@ const PaymentCheck: React.FC = () => {
         );
     }
 
-    return <PaymentPage amount={500} onPaymentComplete={() => setIsPending(true)} />;
+    return <PaymentPage amount={333} onPaymentComplete={() => setIsPending(true)} />;
 };
 
 export default PaymentCheck; 
