@@ -1,12 +1,10 @@
-import React from 'react'
-import WeighbridgeSlip from './components/WeighbridgeSlip'
+'use client';
+import PaymentCheck from './components/PaymentCheck';
 
-const page = () => {
+export default function Home() {
   return (
-    <div>
-      <WeighbridgeSlip />
-    </div>
-  )
+    <main>
+      <PaymentCheck />
+    </main>
+  );
 }
-
-export default page
