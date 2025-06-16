@@ -38,15 +38,16 @@ export const createPayment = async (amount: number): Promise<string> => {
         const now = new Date();
         const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
 
-        // Check if a payment already exists for this month
+        // Check if a pending or verified payment exists for this month
         const q = query(
             paymentsRef,
-            where('month', '==', currentMonth)
+            where('month', '==', currentMonth),
+            where('status', 'in', ['pending', 'verified'])
         );
 
         const querySnapshot = await getDocs(q);
         if (!querySnapshot.empty) {
-            throw new Error('A payment for this month already exists');
+            throw new Error('A payment for this month is already pending verification.');
         }
 
         const paymentData: Payment = {
