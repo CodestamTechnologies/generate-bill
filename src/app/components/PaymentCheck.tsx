@@ -60,7 +60,7 @@ const PaymentCheck: React.FC = () => {
         );
     }
 
-    if (isVerified) {
+    if (!isVerified) {
         return <WeighbridgeSlip />;
     }
 
